@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,700;1,700&family=Vollkorn:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
-
+<!-- ddddd -->
 <body>
 <div class="grid-container">
 <header>
@@ -33,70 +33,70 @@
 <div class="main-container">
     <h2>Расчет требуемого количества<br> отверстий в проеме</h2>
     <div class="input-rows">
-    <div class="input">
-      <div class="signs">
-        <p><i class="far fa-plus-square"></i>
-        <i class="fas fa-caret-right"></i></p>
+      <div class="input">
+        <div class="signs">
+          <p><i class="far fa-plus-square"></i>
+          <i class="fas fa-caret-right"></i></p>
+        </div>
+      <div class="input-width">
+        <p>Ширина, мм:</p>
+        <div class="width">
+          <input type="text" id="width" value="500">
+        </div>
       </div>
-    <div class="input-width">
-      <p>Ширина, мм:</p>
-      <div class="width">
-        <input type="text" id="width" value="500">
+      <div class="input-height">
+        <p>Высота, мм:</p>
+        <div class="height">
+        <input type="text" id="height" value="500">
       </div>
-    </div>
-    <div class="input-height">
-      <p>Высота, мм:</p>
-      <div class="height">
-      <input type="text" id="height" value="500">
-    </div>
-    </div>
-    <div class="input-depth">
-      <p>Толщина, мм:</p>
-      <div class="depth">
-      <input type="text" id="depth" value="250">
-    </div>
-    </div>
-    <div class="input-diameter">
-      <p>Диаметр коронки:</p>
-            <div class="diameter">
-      <select name="diameter" id="diameter">
-  <option value="42">42 мм</option>
-  <option value="52">52 мм</option>
-  <option value="62">62 мм</option>
-  <option value="72">72 мм</option>
-  <option value="82">82 мм</option>
-  <option value="92">92 мм</option>
-  <option value="102">102 мм</option>
-  <option value="112">112 мм</option>
-  <option value="122">122 мм</option>
-  <option value="132">132 мм</option>
-  <option value="142">142 мм</option>
-  <option selected value="152">152 мм</option>
-  <option value="162">162 мм</option>
-  <option value="172">172 мм</option>
-  <option value="182">182 мм</option>
-  <option value="192">192 мм</option>
-  <option value="200">200 мм</option>
-  <option value="250">250 мм</option>
-  <option value="300">300 мм</option>
-  <option value="350">350 мм</option>
-      </select>
-    </div>
-    </div>
-    <div class="add-to-cart">
-      <div class="count">
-        <i class="fas fa-plus"></i>
-        <p> 1 </p>
-        <i class="fas fa-minus"></i>
       </div>
-      <div class="cart">
-      <i class="fas fa-cart-arrow-down"></i>
+      <div class="input-depth">
+        <p>Толщина, мм:</p>
+        <div class="depth">
+        <input type="text" id="depth" value="250">
+      </div>
+      </div>
+      <div class="input-diameter">
+        <p>Диаметр коронки:</p>
+              <div class="diameter">
+        <select name="diameter" id="diameter">
+    <option value="42">42 мм</option>
+    <option value="52">52 мм</option>
+    <option value="62">62 мм</option>
+    <option value="72">72 мм</option>
+    <option value="82">82 мм</option>
+    <option value="92">92 мм</option>
+    <option value="102">102 мм</option>
+    <option value="112">112 мм</option>
+    <option value="122">122 мм</option>
+    <option value="132">132 мм</option>
+    <option value="142">142 мм</option>
+    <option selected value="152">152 мм</option>
+    <option value="162">162 мм</option>
+    <option value="172">172 мм</option>
+    <option value="182">182 мм</option>
+    <option value="192">192 мм</option>
+    <option value="200">200 мм</option>
+    <option value="250">250 мм</option>
+    <option value="300">300 мм</option>
+    <option value="350">350 мм</option>
+        </select>
+      </div>
+      </div>
+      <div class="add-to-cart">
+        <div class="count">
+          <i class="fas fa-plus"></i>
+          <p> 1 </p>
+          <i class="fas fa-minus"></i>
+        </div>
+        <div class="cart">
+        <i class="fas fa-cart-arrow-down"></i>
+      </div>
+      </div>
+      <div class="buttons">
+      <button class="button" type="submit" onclick="draw()">Нарисовать схему</button>
     </div>
-    </div>
-    <div class="buttons">
-    <button class="button" type="submit" onclick="draw()">Нарисовать схему</button>
-  </div>
-    </div>
+      </div>
   </div>
     <div class="buttons">
     <button class="button" type="button" onclick="reset_canvas()">Очистить экран</button><br>
@@ -113,17 +113,26 @@
       </footer>
 </div>
 <script type="text/javascript">
-const INPUTCONTENT = document.querySelector(".input").innerHTML;
-var rowNum = document.querySelector(".input-rows").children.length - 1;
 var addButton = document.querySelector(".input-rows").children[rowNum].children[0].children[0].children[0];
-addButton.addEventListener("click",(function() {
-var container = document.querySelector(".input-rows");
-var newInput = document.createElement("div");
-newInput.classList.add("input");
-newInput.innerHTML = INPUTCONTENT;
-container.append(newInput);
-rowNum.
+
+addButton.addEventListener("click",(function(e) {
+    console.log("HELLO MISHA")
+    console.log(e)
+    var container = document.querySelector(".input-rows");
+    row = document.querySelector(".input")
+    button = row.children[0].children[0].children[0];
+    container.append(document.querySelector(".input"));
+
 }), false);
+//
+// document.addEventListener('click',function(e){
+//    if(e.target && e.target== addButton){
+//
+//        var container = document.querySelector(".input-rows");
+//        container.append(document.querySelector(".input"));
+//     }
+// });
+
 </script>
 
 <script type="text/javascript">

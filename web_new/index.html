@@ -1,295 +1,289 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<script src="https://kit.fontawesome.com/4d075e0ab3.js" crossorigin="anonymous"></script>
-<title>Калькулятор алмазного бурения</title>
-<meta charset="UTF-8" >
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="images/new_logo.png">
-<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,700;1,700&family=Vollkorn:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+  <script src="https://kit.fontawesome.com/4d075e0ab3.js" crossorigin="anonymous"></script>
+  <title>Калькулятор алмазного бурения</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/new_logo.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,700;1,700&family=Vollkorn:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-<div class="grid-container">
-<header>
-  <div class= "header-cont">
-      <figure><img id="logo" src="images/new_logo.png" alt="logo"></figure>
-    <div class=first-name>
-    <h1>Morozco</h1>
-    <p>Алмазная резка и алмазное бурение</p>
+  <div class="grid-container">
+    <header>
+      <div class="header-cont">
+        <figure><img id="logo" src="images/new_logo.png" alt="logo"></figure>
+        <div class=first-name>
+          <h1>Morozco</h1>
+          <p>Алмазная резка и алмазное бурение</p>
+        </div>
+        <div class="telefone">
+          <p><i class="fas fa-phone"></i> +7 (926) 932 68 40<br>Михаил</br></p>
+        </div>
+      </div>
+    </header>
+    <div class="nav">
+      <a href="#calculator"><i class="fas fa-calculator"></i> Расчет онлайн</a>
+      <a href="#price"><i class="fas fa-dollar-sign"></i> Прайс-лист</a>
+      <a href="#gallery"><i class="far fa-images"></i> Фото работ</a>
+      <a href="#contacts"><i class="far fa-address-card"></i> Контакты</a>
     </div>
-    <div class="telefone">
-    <p><i class="fas fa-phone"></i> +7 (926) 932 68 40<br>Михаил</br></p>
-    </div>
-  </div>
-</header>
-<div class="nav">
-  <a href="#calculator"><i class="fas fa-calculator"></i> Расчет онлайн</a>
-  <a href="#price"><i class="fas fa-dollar-sign"></i> Прайс-лист</a>
-  <a href="#gallery"><i class="far fa-images"></i> Фото работ</a>
-  <a href="#contacts"><i class="far fa-address-card"></i> Контакты</a>
-</div>
-<div class="main-container">
-    <h2>Расчет требуемого количества<br> отверстий в проеме</h2>
-    <div class="input-rows">
-      <div class="input">
-        <div class="signs">
-          <p><i class="far fa-plus-square"></i>
-          <i class="fas fa-caret-right"></i></p>
+    <div class="main-container">
+      <h2>Расчет требуемого количества<br> отверстий в проеме</h2>
+      <div class="input-rows">
+        <div class="input">
+          <div class="signs">
+            <p><i class="far fa-plus-square"></i>
+              <i class="fas fa-caret-right"></i></p>
+          </div>
+          <div class="input-width">
+            <p>Ширина, мм:</p>
+            <div class="width">
+              <input type="text" id="width" value="500">
+            </div>
+          </div>
+          <div class="input-height">
+            <p>Высота, мм:</p>
+            <div class="height">
+              <input type="text" id="height" value="500">
+            </div>
+          </div>
+          <div class="input-depth">
+            <p>Толщина, мм:</p>
+            <div class="depth">
+              <input type="text" id="depth" value="250">
+            </div>
+          </div>
+          <div class="input-diameter">
+            <p>Диаметр коронки:</p>
+            <div class="diameter">
+              <select name="diameter" id="diameter">
+                <option value="42">42 мм</option>
+                <option value="52">52 мм</option>
+                <option value="62">62 мм</option>
+                <option value="72">72 мм</option>
+                <option value="82">82 мм</option>
+                <option value="92">92 мм</option>
+                <option value="102">102 мм</option>
+                <option value="112">112 мм</option>
+                <option value="122">122 мм</option>
+                <option value="132">132 мм</option>
+                <option value="142">142 мм</option>
+                <option selected value="152">152 мм</option>
+                <option value="162">162 мм</option>
+                <option value="172">172 мм</option>
+                <option value="182">182 мм</option>
+                <option value="192">192 мм</option>
+                <option value="200">200 мм</option>
+                <option value="250">250 мм</option>
+                <option value="300">300 мм</option>
+                <option value="350">350 мм</option>
+              </select>
+            </div>
+          </div>
+          <div class="add-to-cart">
+            <div class="count">
+              <i class="fas fa-plus"></i>
+              <p> 1 </p>
+              <i class="fas fa-minus"></i>
+            </div>
+            <div class="cart">
+              <i class="fas fa-cart-arrow-down"></i>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="button" type="submit" onclick="draw()">Нарисовать схему</button>
+          </div>
         </div>
-      <div class="input-width">
-        <p>Ширина, мм:</p>
-        <div class="width">
-          <input type="text" id="width" value="500">
-        </div>
-      </div>
-      <div class="input-height">
-        <p>Высота, мм:</p>
-        <div class="height">
-        <input type="text" id="height" value="500">
-      </div>
-      </div>
-      <div class="input-depth">
-        <p>Толщина, мм:</p>
-        <div class="depth">
-        <input type="text" id="depth" value="250">
-      </div>
-      </div>
-      <div class="input-diameter">
-        <p>Диаметр коронки:</p>
-              <div class="diameter">
-        <select name="diameter" id="diameter">
-    <option value="42">42 мм</option>
-    <option value="52">52 мм</option>
-    <option value="62">62 мм</option>
-    <option value="72">72 мм</option>
-    <option value="82">82 мм</option>
-    <option value="92">92 мм</option>
-    <option value="102">102 мм</option>
-    <option value="112">112 мм</option>
-    <option value="122">122 мм</option>
-    <option value="132">132 мм</option>
-    <option value="142">142 мм</option>
-    <option selected value="152">152 мм</option>
-    <option value="162">162 мм</option>
-    <option value="172">172 мм</option>
-    <option value="182">182 мм</option>
-    <option value="192">192 мм</option>
-    <option value="200">200 мм</option>
-    <option value="250">250 мм</option>
-    <option value="300">300 мм</option>
-    <option value="350">350 мм</option>
-        </select>
-      </div>
-      </div>
-      <div class="add-to-cart">
-        <div class="count">
-          <i class="fas fa-plus"></i>
-          <p> 1 </p>
-          <i class="fas fa-minus"></i>
-        </div>
-        <div class="cart">
-        <i class="fas fa-cart-arrow-down"></i>
-      </div>
       </div>
       <div class="buttons">
-      <button class="button" type="submit" onclick="draw()">Нарисовать схему</button>
-    </div>
+        <button class="button" type="button" onclick="reset_canvas()">Очистить экран</button><br>
       </div>
-  </div>
-    <div class="buttons">
-    <button class="button" type="button" onclick="reset_canvas()">Очистить экран</button><br>
+      <!--Canvas-->
+      <canvas id="myCanvas" width="500" height="500">
     </div>
-    <!--Canvas-->
-    <canvas id="myCanvas" width="500" height="500">
-          </div>
-      <footer id="contacts">
+    <footer id="contacts">
 
-          <a href="mailto:m.popov@thermolines.ru"><i class="far fa-envelope" area-hidden="true"></i>
-          <span class="sr-only">m.popov@thermolines.ru</span></a>
+      <a href="mailto:m.popov@thermolines.ru"><i class="far fa-envelope" area-hidden="true"></i>
+        <span class="sr-only">m.popov@thermolines.ru</span></a>
 
-          <p>Copyright 2020 <i class="far fa-gem" style="font-size: 1.25rem;"></i> by Mikhail Popov</p>
-      </footer>
-</div>
-<script type="text/javascript">
-var addButton = document.querySelector(".input-rows").children[rowNum].children[0].children[0].children[0];
+      <p>Copyright 2020 <i class="far fa-gem" style="font-size: 1.25rem;"></i> by Mikhail Popov</p>
+    </footer>
+  </div>
+  <script type="text/javascript">
+    // Script that appends a row on click event
+    const INPUT_ROWS = document.querySelector(".input-rows");
+    INPUT_ROWS.addEventListener("click", (function (e) {
+        if (e.target && e.target.parentElement.parentElement.parentElement.className=='input') {
+          console.log(e)
+          row_to_copy = e.target.parentElement.parentElement.parentElement.cloneNode(true)
+          INPUT_ROWS.append(row_to_copy)
+        }
+    }));
+  </script>
 
-addButton.addEventListener("click",(function(e) {
-    console.log("HELLO MISHA")
-    console.log(e)
-    var container = document.querySelector(".input-rows");
-    row = document.querySelector(".input")
-    button = row.children[0].children[0].children[0];
-    container.append(document.querySelector(".input"));
+  <script type="text/javascript">
+    const PLUSBUTTON = document.querySelectorAll(".count i")[0];
+    const MINUSBUTTON = document.querySelectorAll(".count i")[1];
+    PLUSBUTTON.addEventListener("click", (function add() {
+      var num = document.querySelector(".count p").innerText;
+      var plusNum = num * 1 + 1;
+      document.querySelector(".count p").innerText = plusNum;
+    }), false);
+    MINUSBUTTON.addEventListener("click", (function subtract() {
+      var num = document.querySelector(".count p").innerText;
+      var minusNum = num * 1 - 1;
+      if (minusNum >= 0) {
+        document.querySelector(".count p").innerText = minusNum;
+      }
+    }), false);
 
-}), false);
-//
-// document.addEventListener('click',function(e){
-//    if(e.target && e.target== addButton){
-//
-//        var container = document.querySelector(".input-rows");
-//        container.append(document.querySelector(".input"));
-//     }
-// });
+  </script>
+  <script type="text/javascript">
+    const INPUTELEMENT = document.querySelector(".input");
+    const CARETBUTTON = document.querySelector(".signs p").children[1];
+    CARETBUTTON.addEventListener("click", toggle, false);
 
-</script>
-
-<script type="text/javascript">
-const PLUSBUTTON = document.querySelectorAll(".count i")[0];
-const MINUSBUTTON = document.querySelectorAll(".count i")[1];
-  PLUSBUTTON.addEventListener("click", (function add() {
-    var num = document.querySelector(".count p").innerText;
-    var plusNum = num*1 + 1;
-    document.querySelector(".count p").innerText = plusNum;
-  }), false);
-  MINUSBUTTON.addEventListener("click", (function subtract() {
-    var num = document.querySelector(".count p").innerText;
-    var minusNum = num*1 - 1;
-    if (minusNum >= 0) {
-      document.querySelector(".count p").innerText = minusNum;
-    }}), false);
-
-</script>
-<script type="text/javascript">
-const INPUTELEMENT = document.querySelector(".input");
-const CARETBUTTON = document.querySelector(".signs p").children[1];
-CARETBUTTON.addEventListener("click", toggle, false);
-
-function toggle() {
-if (CARETBUTTON.classList.contains("fa-caret-down")) {
-  (function reveal() {
-    document.querySelector(".input-mod").classList.toggle("input");
-    document.querySelector(".input-mod").classList.toggle("input-mod");
-    let length = document.querySelectorAll(".input p").length - 1;
-    document.querySelectorAll(".input p")[length].remove();
-    document.querySelector(".input").style="none";
-  for (var i = 1; i < (INPUTELEMENT.children.length); i++) {
-    INPUTELEMENT.children[i].classList.toggle("hide");
-  }
-  CARETBUTTON.classList.remove("fa-caret-down");
-  CARETBUTTON.classList.add("fa-caret-right");
-})()
-}
-else if (CARETBUTTON.classList.contains("fa-caret-right")) {
-  (function hide() {
-  for (var i = 1; i < (INPUTELEMENT.children.length); i++) {
-    INPUTELEMENT.children[i].classList.toggle("hide");
-  }
-  var newText = document.createTextNode("Проем " + document.getElementById("width").value + " x " + document.getElementById("height").value + " x " + document.getElementById("depth").value + " мм - " + document.querySelector(".count p").innerText + " шт.");
-  var paragraphElement = document.createElement("p");
-  paragraphElement.appendChild(newText);
-  INPUTELEMENT.appendChild(paragraphElement);
-  let length = document.querySelectorAll(".input p").length - 1;
-  document.querySelectorAll(".input p")[length].style.alignSelf="center";
-  document.querySelector(".input").classList.toggle("input-mod");
-  document.querySelector(".input").classList.toggle("input");
-  CARETBUTTON.classList.remove("fa-caret-right");
-  CARETBUTTON.classList.add("fa-caret-down");
-})()
-}}
-</script>
-<script type="text/javascript">
-    var width, height, diameter, coordinates=[], radius;
+    function toggle() {
+      if (CARETBUTTON.classList.contains("fa-caret-down")) {
+        (function reveal() {
+          document.querySelector(".input-mod").classList.toggle("input");
+          document.querySelector(".input-mod").classList.toggle("input-mod");
+          let length = document.querySelectorAll(".input p").length - 1;
+          document.querySelectorAll(".input p")[length].remove();
+          document.querySelector(".input").style = "none";
+          for (var i = 1; i < (INPUTELEMENT.children.length); i++) {
+            INPUTELEMENT.children[i].classList.toggle("hide");
+          }
+          CARETBUTTON.classList.remove("fa-caret-down");
+          CARETBUTTON.classList.add("fa-caret-right");
+        })()
+      }
+      else if (CARETBUTTON.classList.contains("fa-caret-right")) {
+        (function hide() {
+          for (var i = 1; i < (INPUTELEMENT.children.length); i++) {
+            INPUTELEMENT.children[i].classList.toggle("hide");
+          }
+          var newText = document.createTextNode("Проем " + document.getElementById("width").value + " x " + document.getElementById("height").value + " x " + document.getElementById("depth").value + " мм - " + document.querySelector(".count p").innerText + " шт.");
+          var paragraphElement = document.createElement("p");
+          paragraphElement.appendChild(newText);
+          INPUTELEMENT.appendChild(paragraphElement);
+          let length = document.querySelectorAll(".input p").length - 1;
+          document.querySelectorAll(".input p")[length].style.alignSelf = "center";
+          document.querySelector(".input").classList.toggle("input-mod");
+          document.querySelector(".input").classList.toggle("input");
+          CARETBUTTON.classList.remove("fa-caret-right");
+          CARETBUTTON.classList.add("fa-caret-down");
+        })()
+      }
+    }
+  </script>
+  <script type="text/javascript">
+    var width, height, diameter, coordinates = [], radius;
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
 
     function draw() {
 
-        grab_input();
-        scale_input();
+      grab_input();
+      scale_input();
 
-        draw_rectangle(width, height);
+      draw_rectangle(width, height);
 
-        length = get_length(radius);
-        length2 = length*2;
-        new_width = width - length2;
-        new_height = height - length2;
+      length = get_length(radius);
+      length2 = length * 2;
+      new_width = width - length2;
+      new_height = height - length2;
 
-        xMax = Math.ceil(new_width/(diameter));
-        yMax = Math.ceil(new_height/(diameter));
-        xMin = xMax - 1;
-        yMin = yMax - 1;
+      xMax = Math.ceil(new_width / (diameter));
+      yMax = Math.ceil(new_height / (diameter));
+      xMin = xMax - 1;
+      yMin = yMax - 1;
 
-        xStep = new_width/xMax;
-        yStep = new_height/yMax;
+      xStep = new_width / xMax;
+      yStep = new_height / yMax;
 
-        x = 250 - (new_width/2);
-        y = 250 - (new_height/2);
+      x = 250 - (new_width / 2);
+      y = 250 - (new_height / 2);
+      draw_circle(x, y, radius);
+      x = 250 + (new_width / 2);
+      y = 250 + (new_height / 2);
+      draw_circle(x, y, radius);
+      x = 250 + (new_width / 2);
+      y = 250 - (new_height / 2);
+      draw_circle(x, y, radius);
+      x = 250 - (new_width / 2);
+      y = 250 + (new_height / 2);
+      draw_circle(x, y, radius);
+
+      for (let i = 1; i <= xMin; i++) {
+        x = 250 - (new_width / 2) + xStep * i;
+        y = 250 - (new_height / 2);
         draw_circle(x, y, radius);
-        x = 250 + (new_width/2);
-        y = 250 + (new_height/2);
+        y = 250 + (new_height / 2);
         draw_circle(x, y, radius);
-        x = 250 + (new_width/2);
-        y = 250 - (new_height/2);
-        draw_circle(x, y, radius);
-        x = 250 - (new_width/2);
-        y = 250 + (new_height/2);
-        draw_circle(x, y, radius);
+      }
 
-        for (let i=1; i<=xMin; i++) {
-            x = 250 - (new_width/2) + xStep*i;
-            y = 250 - (new_height/2);
-            draw_circle(x, y, radius);
-            y = 250 + (new_height/2);
-            draw_circle(x, y, radius);
-        }
-
-        for (let i=1; i<=yMin; i++) {
-            y = 250 - (new_height/2) + yStep*i;
-            x = 250 - (new_width/2);
-            draw_circle(x, y, radius);
-            x = 250 + (new_width/2);
-            draw_circle(x, y, radius);
-        }
+      for (let i = 1; i <= yMin; i++) {
+        y = 250 - (new_height / 2) + yStep * i;
+        x = 250 - (new_width / 2);
+        draw_circle(x, y, radius);
+        x = 250 + (new_width / 2);
+        draw_circle(x, y, radius);
+      }
 
     }
 
-    function scale_input(scale=0.8) {
-        shortest = Math.min(c.width, c.height);
-        longest_side = Math.max(width, height)
-        max_length = shortest*scale;
-        scalar = max_length/longest_side;
-        width = width*scalar;
-        height = height*scalar;
-        diameter = diameter*scalar;
-        radius = radius*scalar;
+    function scale_input(scale = 0.8) {
+      shortest = Math.min(c.width, c.height);
+      longest_side = Math.max(width, height)
+      max_length = shortest * scale;
+      scalar = max_length / longest_side;
+      width = width * scalar;
+      height = height * scalar;
+      diameter = diameter * scalar;
+      radius = radius * scalar;
     }
 
     function reset_canvas() {
-        ctx.clearRect(0, 0, c.width, c.height);
+      ctx.clearRect(0, 0, c.width, c.height);
     }
 
     function grab_input() {
-        diameter = document.getElementById("diameter").value
-        height = document.getElementById("height").value
-        width = document.getElementById("width").value
-        radius = diameter/2;
+      diameter = document.getElementById("diameter").value
+      height = document.getElementById("height").value
+      width = document.getElementById("width").value
+      radius = diameter / 2;
     }
-    function draw_rectangle(width, height, border=1, dash=false) {
-        var xUpperLeft = 250 - (width/2);
-        var yUpperLeft = 250 - (height/2);
-        ctx.beginPath();
-        ctx.lineWidth = border;
-        if (dash) {
-            ctx.setLineDash([5,5]);
-        }
-        ctx.strokeStyle = "black";
-        ctx.rect(xUpperLeft, yUpperLeft, width, height);
-        ctx.stroke();
-        ctx.setLineDash([])
+    function draw_rectangle(width, height, border = 1, dash = false) {
+      var xUpperLeft = 250 - (width / 2);
+      var yUpperLeft = 250 - (height / 2);
+      ctx.beginPath();
+      ctx.lineWidth = border;
+      if (dash) {
+        ctx.setLineDash([5, 5]);
+      }
+      ctx.strokeStyle = "black";
+      ctx.rect(xUpperLeft, yUpperLeft, width, height);
+      ctx.stroke();
+      ctx.setLineDash([])
     }
     function draw_circle(x, y, radius) {
-        ctx.beginPath();
-        ctx.arc(x, y, radius, 0, 2 * Math.PI);
-        ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, 2 * Math.PI);
+      ctx.stroke();
     }
     function get_length(diameter) {
-        length = Math.cos(45 * Math.PI / 180) * diameter;
-        return length;
+      length = Math.cos(45 * Math.PI / 180) * diameter;
+      return length;
     }
 
-</script>
+  </script>
 
 </body>
 

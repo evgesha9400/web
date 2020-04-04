@@ -107,6 +107,7 @@
       <!--Canvas-->
       <canvas id="myCanvas" width="500" height="500">
     </div>
+
     <footer id="contacts">
 
       <a href="mailto:m.popov@thermolines.ru"><i class="far fa-envelope" area-hidden="true"></i>
@@ -116,16 +117,72 @@
     </footer>
   </div>
   <script type="text/javascript">
-    // Script that appends a row on click event
-    const INPUT_ROWS = document.querySelector(".input-rows");
-    INPUT_ROWS.addEventListener("click", (function (e) {
-        if (e.target && e.target.parentElement.parentElement.parentElement.className=='input') {
-          console.log(e)
-          row_to_copy = e.target.parentElement.parentElement.parentElement.cloneNode(true)
-          INPUT_ROWS.append(row_to_copy)
-        }
-    }));
+  // Script that appends a row on click event
+  function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+  const INPUT_ROWS = document.querySelector(".input-rows");
+  INPUT_ROWS.addEventListener("click", (function (e) {
+      if (e.target && e.target.classList.contains("fa-plus-square")) {
+        console.log(e)
+        referenceNode = e.target.parentElement.parentElement.parentElement
+        row_to_copy = referenceNode.cloneNode(true)
+        insertAfter(row_to_copy, referenceNode);
+      }
+  }));
   </script>
+    <!--Canvas-->
+    <canvas id="myCanvas" width="500" height="500">
+          </div>
+      <footer id="contacts">
+          <a href="mailto:m.popov@thermolines.ru"><i class="far fa-envelope" area-hidden="true"></i>
+          <span class="sr-only">m.popov@thermolines.ru</span></a>
+          <p>Copyright 2020 <i class="far fa-gem" style="font-size: 1.25rem;"></i> by Mikhail Popov</p>
+      </footer>
+</div>
+<!-- <script type="text/javascript">
+const CONTAINER = document.querySelector(".input-rows");
+const NEWROW = document.querySelector(".input");
+CONTAINER.addEventListener("click",(function(e) {
+  if (e.target && e.target.classList.contains("fa-plus-square")) {
+// for (var i = 0; i < (e.target.parentElement.parentElement.parentElement.parentElement.children.length-1); i++) {
+//   if (CONTAINER.children[i].contains(e.target)) {
+//     var rowNum = i;
+//   }
+// }
+CONTAINER.insertBefore(NEWROW, e.target.parentElement.parentElement.parentElement.nextSibling);
+  }
+    // row = document.querySelector(".input")
+    // button = row.children[0].children[0].children[0];
+    // container.append(document.querySelector(".input"));
+}), false); -->
+// var addButton = document.querySelector(".input-rows").children[rowNum].children[0].children[0].children[0];
+//
+// document.addEventListener('click',function(e){
+//    if(e.target && e.target== addButton){
+//
+//        var container = document.querySelector(".input-rows");
+//        container.append(document.querySelector(".input"));
+//     }
+// });
+<!--
+</script> -->
+<script type="text/javascript">
+  // Script that appends a row on click event
+  function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+  const INPUT_ROWS = document.querySelector(".input-rows");
+  INPUT_ROWS.addEventListener("click", (function (e) {
+      if (e.target && e.target.classList.contains("fa-plus-square")) {
+        console.log(e)
+        referenceNode = e.target.parentElement.parentElement.parentElement
+        row_to_copy = referenceNode.cloneNode(true)
+        insertAfter(row_to_copy, referenceNode);
+      }
+  }));
+</script>
+
 
   <script type="text/javascript">
     const PLUSBUTTON = document.querySelectorAll(".count i")[0];
